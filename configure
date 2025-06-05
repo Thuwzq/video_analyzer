@@ -1,0 +1,45 @@
+#!/bin/bash
+
+HAS_FFMPEG=false
+EXTRA_LDFLAGS=""
+EXTRA_CFLAGS=""
+
+# detect ffmpeg
+if command -v pkg-config &> /dev/null && \
+   pkg-config --exists libavutil libavformat; then
+    HAS_FFMPEG=true
+    echo "find ffmpeg libs by pkg-config, use pkg-config for compiling"
+fi
+
+# analysis input
+for arg in "$@"; do
+    case $arg in
+        --extra-ldflags=*)
+            EXTRA_LDFLAGS="${arg#*=}"
+            shift
+            ;;
+        --extra-cflags=*)
+            EXTRA_CFLAGS="${arg#*=}"
+            shift
+            ;;
+    esac
+done
+
+# check compile conditions
+if [ "$HAS_FFMPEG" = false ] && \
+   { [ -z "$EXTRA_LDFLAGS" ] || [ -z "$EXTRA_CFLAGS" ]; }; then
+    echo "error: can not find FFmpeg libs and no --extra-cflags/--extra-ldflags params"
+    echo "please do one of the following:"
+    echo "1. install FFmpeg and make sure pkg-config can find it"
+    echo "2. use --extra-cflags and --extra-ldflags to specify the headers and libs"
+    exit 1
+fi
+
+# generate makefile config
+cat > Makefile.config <<EOF
+HAS_FFMPEG = $HAS_FFMPEG
+EXTRA_LDFLAGS = $EXTRA_LDFLAGS
+EXTRA_CFLAGS = $EXTRA_CFLAGS
+EOF
+
+echo "configure done, please run 'make'"
