@@ -4,7 +4,7 @@
 An personal util set for analysis videos
 
 ## Requirements
-pkg-config
+pkg-config  
 FFmpeg
 
 ## Environments
