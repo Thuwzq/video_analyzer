@@ -68,7 +68,7 @@ print("每个清晰度类别下的视频数量已保存到 output2/resolution_la
 res_group = filtered.groupby("resolution_label")["avg_iframe_size"].mean().reset_index()
 res_group = res_group.sort_values("avg_iframe_size")  # 可改为固定顺序排序
 
-# 指定清晰度标签顺序（从低到高）
+
 # 指定清晰度标签顺序（从低到高）
 label_order = ["<=480p", "720p", "1080p", "2K", "4K", "8K+"]
 
