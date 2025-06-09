@@ -10,20 +10,20 @@ for f in "${video_files[@]}"; do
     count=$((count + 1))
     filename=$(basename "$f")
 
-    # 文件为空就跳过
+    # Skip if file is empty
     if [ ! -s "$f" ]; then
-        echo "[${count}/${total}] ⚠️ 跳过空文件：$filename"
+        echo "[${count}/${total}] ⚠️ Skipping empty file: $filename"
         continue
     fi
 
-    echo "[${count}/${total}] 正在处理：$filename"
+    echo "[${count}/${total}] Processing: $filename"
     ./all_video_frame_size "$f" > "results/${filename}.txt"
 
     if [ $? -eq 0 ]; then
-        echo "✅ 完成：$filename"
+        echo "Done: $filename"
     else
-        echo "❌ 处理失败（可能是损坏文件）：$filename"
+        echo "Processing failed (possibly corrupted file): $filename"
     fi
 done
 
-echo "📦 全部处理完成，共 ${total} 个视频"
+echo "All processing completed, total ${total} videos"

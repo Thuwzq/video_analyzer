@@ -2,38 +2,38 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# 输出文件夹
+# Output folder
 os.makedirs("output2", exist_ok=True)
 
-# 读取 I 帧数据
+# Read I-frame data
 iframe_df = pd.read_csv("iframe_data.csv")
 iframe_df.columns = [col.strip() for col in iframe_df.columns]
 iframe_df["video"] = iframe_df["video"].str.replace(".txt", "")
 
-# 读取视频信息数据
+# Read video info data
 info_df = pd.read_csv("video_info.csv", encoding="utf-8-sig")
 info_df.columns = [col.strip() for col in info_df.columns]
 
-# 每个视频的平均 I 帧大小
+# Average I-frame size for each video
 avg_iframe = iframe_df.groupby("video")["size_bytes"].mean().reset_index()
 avg_iframe.columns = ["video", "avg_iframe_size"]
 
-# 合并数据
+# Merge data
 merged = pd.merge(avg_iframe, info_df, on="video")
 
-# 筛除非法比特率
+# Filter out invalid bitrates
 merged["bitrate"] = pd.to_numeric(merged["bitrate"], errors="coerce")
 merged = merged[merged["bitrate"].notnull()]
 merged["bitrate"] = merged["bitrate"].astype(int)
 
-# 去除 I 帧大小异常值（IQR）
+# Remove outliers in I-frame size (IQR)
 Q1 = merged["avg_iframe_size"].quantile(0.25)
 Q3 = merged["avg_iframe_size"].quantile(0.75)
 IQR = Q3 - Q1
 filtered = merged[(merged["avg_iframe_size"] >= Q1 - 1.5 * IQR) &
                   (merged["avg_iframe_size"] <= Q3 + 1.5 * IQR)]
 
-# 分辨率转为清晰度标签
+# Convert resolution to quality label
 def resolution_to_label(res):
     try:
         w, h = map(int, res.lower().split('x'))
@@ -55,32 +55,31 @@ def resolution_to_label(res):
 
 filtered["resolution_label"] = filtered["resolution"].apply(resolution_to_label)
 filtered[["video", "resolution", "resolution_label", "avg_iframe_size"]].to_csv("output2/video_resolution_label.csv", index=False)
-print("每个视频的分辨率类别和平均I帧大小已保存到 output2/video_resolution_label.csv")
+print("The resolution category and average I-frame size of each video have been saved to output2/video_resolution_label.csv")
 
-# 统计每个清晰度类别下的视频数量
+# Count the number of videos in each quality category
 label_counts = filtered["resolution_label"].value_counts().sort_index()
-print("每个清晰度类别下的视频数量：")
+print("Number of videos in each resolution category:")
 print(label_counts)
 label_counts.to_csv("output2/resolution_label_counts.csv", header=["count"])
-print("每个清晰度类别下的视频数量已保存到 output2/resolution_label_counts.csv")
+print("The number of videos in each resolution category has been saved to output2/resolution_label_counts.csv")
 
-# 按清晰度标签分组并求平均
+# Group by quality label and calculate average
 res_group = filtered.groupby("resolution_label")["avg_iframe_size"].mean().reset_index()
-res_group = res_group.sort_values("avg_iframe_size")  # 可改为固定顺序排序
+res_group = res_group.sort_values("avg_iframe_size")  # Can be changed to fixed order sorting
 
-# 指定清晰度标签顺序（从低到高）
-# 指定清晰度标签顺序（从低到高）
+# Specify the order of quality labels (from low to high)
 label_order = ["<=480p", "720p", "1080p", "2K", "4K", "8K+"]
 
-# 将 resolution_label 设置为分类变量，并指定顺序
+# Set resolution_label as a categorical variable and specify the order
 res_group["resolution_label"] = pd.Categorical(res_group["resolution_label"], categories=label_order, ordered=True)
 res_group = res_group.sort_values("resolution_label")
 
-# 绘图
+# Plotting
 plt.figure(figsize=(10, 6))
 bars = plt.bar(res_group["resolution_label"], res_group["avg_iframe_size"], color='skyblue', edgecolor='black')
 
-# 数值标注
+# Value annotation
 for bar in bars:
     height = bar.get_height()
     plt.text(bar.get_x() + bar.get_width()/2, height + 500, f"{int(height)}", 
@@ -92,4 +91,4 @@ plt.title("Average I-frame Size by Resolution Label")
 plt.grid(axis='y', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.savefig("output2/iframe_by_resolution_label_bar.png")
-print("✅ 图已保存至 output2/iframe_by_resolution_label_bar.png")
+print("The plot has been saved to output2/iframe_by_resolution_label_bar.png")
