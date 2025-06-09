@@ -21,6 +21,8 @@ avg_iframe.columns = ["video", "avg_iframe_size"]
 
 # 合并比特率和分辨率
 merged = pd.merge(avg_iframe, info_df, on="video")
+print(merged.to_string())
+merged.to_string(open("output2/merged_full.txt", "w"))
 
 print("列名：", merged.columns.tolist())
 print("合并后前10行：\n", merged.head(10))

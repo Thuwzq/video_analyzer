@@ -38,10 +38,8 @@ def resolution_to_label(res):
     try:
         w, h = map(int, res.lower().split('x'))
         area = w * h
-        if area <= 400_000:
-            return "360p"
-        elif area <= 600_000:
-            return "480p"
+        if area <= 600_000:
+            return "<=480p"
         elif area <= 1_000_000:
             return "720p"
         elif area <= 2_500_000:
@@ -56,13 +54,23 @@ def resolution_to_label(res):
         return "Unknown"
 
 filtered["resolution_label"] = filtered["resolution"].apply(resolution_to_label)
+filtered[["video", "resolution", "resolution_label", "avg_iframe_size"]].to_csv("output2/video_resolution_label.csv", index=False)
+print("每个视频的分辨率类别和平均I帧大小已保存到 output2/video_resolution_label.csv")
+
+# 统计每个清晰度类别下的视频数量
+label_counts = filtered["resolution_label"].value_counts().sort_index()
+print("每个清晰度类别下的视频数量：")
+print(label_counts)
+label_counts.to_csv("output2/resolution_label_counts.csv", header=["count"])
+print("每个清晰度类别下的视频数量已保存到 output2/resolution_label_counts.csv")
 
 # 按清晰度标签分组并求平均
 res_group = filtered.groupby("resolution_label")["avg_iframe_size"].mean().reset_index()
 res_group = res_group.sort_values("avg_iframe_size")  # 可改为固定顺序排序
 
 # 指定清晰度标签顺序（从低到高）
-label_order = ["360p", "480p", "720p", "1080p", "2K", "4K", "8K+"]
+# 指定清晰度标签顺序（从低到高）
+label_order = ["<=480p", "720p", "1080p", "2K", "4K", "8K+"]
 
 # 将 resolution_label 设置为分类变量，并指定顺序
 res_group["resolution_label"] = pd.Categorical(res_group["resolution_label"], categories=label_order, ordered=True)
