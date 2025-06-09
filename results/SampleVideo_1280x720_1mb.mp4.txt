@@ -1,0 +1,146 @@
+print meta info for videos/SampleVideo_1280x720_1mb.mp4:
+  duration time: 5.31 秒
+  file size: 1.01 MB
+  frame rate: 25.00 fps
+  decoder: H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10
+
+帧类型与大小统计:
+frame #1: size before decode=105222 bytes, size after decode=1843200 bytes, type=I, timestamp=0.000 seconds
+frame #2: size before decode=1554 bytes, size after decode=1843200 bytes, type=P, timestamp=0.040 seconds
+frame #3: size before decode=2153 bytes, size after decode=1843200 bytes, type=P, timestamp=0.080 seconds
+frame #4: size before decode=2208 bytes, size after decode=1843200 bytes, type=P, timestamp=0.120 seconds
+frame #5: size before decode=2523 bytes, size after decode=1843200 bytes, type=P, timestamp=0.160 seconds
+frame #6: size before decode=3088 bytes, size after decode=1843200 bytes, type=P, timestamp=0.200 seconds
+frame #7: size before decode=4188 bytes, size after decode=1843200 bytes, type=P, timestamp=0.240 seconds
+frame #8: size before decode=365 bytes, size after decode=1843200 bytes, type=P, timestamp=0.280 seconds
+frame #9: size before decode=3571 bytes, size after decode=1843200 bytes, type=P, timestamp=0.320 seconds
+frame #10: size before decode=3966 bytes, size after decode=1843200 bytes, type=P, timestamp=0.360 seconds
+frame #11: size before decode=4081 bytes, size after decode=1843200 bytes, type=P, timestamp=0.400 seconds
+frame #12: size before decode=4631 bytes, size after decode=1843200 bytes, type=P, timestamp=0.440 seconds
+frame #13: size before decode=4996 bytes, size after decode=1843200 bytes, type=P, timestamp=0.480 seconds
+frame #14: size before decode=5909 bytes, size after decode=1843200 bytes, type=P, timestamp=0.520 seconds
+frame #15: size before decode=5995 bytes, size after decode=1843200 bytes, type=P, timestamp=0.560 seconds
+frame #16: size before decode=6419 bytes, size after decode=1843200 bytes, type=P, timestamp=0.600 seconds
+frame #17: size before decode=6212 bytes, size after decode=1843200 bytes, type=P, timestamp=0.640 seconds
+frame #18: size before decode=6762 bytes, size after decode=1843200 bytes, type=P, timestamp=0.680 seconds
+frame #19: size before decode=6291 bytes, size after decode=1843200 bytes, type=P, timestamp=0.720 seconds
+frame #20: size before decode=6902 bytes, size after decode=1843200 bytes, type=P, timestamp=0.760 seconds
+frame #21: size before decode=6916 bytes, size after decode=1843200 bytes, type=P, timestamp=0.800 seconds
+frame #22: size before decode=7469 bytes, size after decode=1843200 bytes, type=P, timestamp=0.840 seconds
+frame #23: size before decode=7152 bytes, size after decode=1843200 bytes, type=P, timestamp=0.880 seconds
+frame #24: size before decode=7607 bytes, size after decode=1843200 bytes, type=P, timestamp=0.920 seconds
+frame #25: size before decode=7663 bytes, size after decode=1843200 bytes, type=P, timestamp=0.960 seconds
+frame #26: size before decode=7637 bytes, size after decode=1843200 bytes, type=P, timestamp=1.000 seconds
+frame #27: size before decode=7241 bytes, size after decode=1843200 bytes, type=P, timestamp=1.040 seconds
+frame #28: size before decode=7520 bytes, size after decode=1843200 bytes, type=P, timestamp=1.080 seconds
+frame #29: size before decode=7233 bytes, size after decode=1843200 bytes, type=P, timestamp=1.120 seconds
+frame #30: size before decode=7677 bytes, size after decode=1843200 bytes, type=P, timestamp=1.160 seconds
+frame #31: size before decode=7210 bytes, size after decode=1843200 bytes, type=P, timestamp=1.200 seconds
+frame #32: size before decode=8123 bytes, size after decode=1843200 bytes, type=P, timestamp=1.240 seconds
+frame #33: size before decode=791 bytes, size after decode=1843200 bytes, type=P, timestamp=1.280 seconds
+frame #34: size before decode=6174 bytes, size after decode=1843200 bytes, type=P, timestamp=1.320 seconds
+frame #35: size before decode=6906 bytes, size after decode=1843200 bytes, type=P, timestamp=1.360 seconds
+frame #36: size before decode=7002 bytes, size after decode=1843200 bytes, type=P, timestamp=1.400 seconds
+frame #37: size before decode=7519 bytes, size after decode=1843200 bytes, type=P, timestamp=1.440 seconds
+frame #38: size before decode=7508 bytes, size after decode=1843200 bytes, type=P, timestamp=1.480 seconds
+frame #39: size before decode=8218 bytes, size after decode=1843200 bytes, type=P, timestamp=1.520 seconds
+frame #40: size before decode=8257 bytes, size after decode=1843200 bytes, type=P, timestamp=1.560 seconds
+frame #41: size before decode=8619 bytes, size after decode=1843200 bytes, type=P, timestamp=1.600 seconds
+frame #42: size before decode=8071 bytes, size after decode=1843200 bytes, type=P, timestamp=1.640 seconds
+frame #43: size before decode=8266 bytes, size after decode=1843200 bytes, type=P, timestamp=1.680 seconds
+frame #44: size before decode=7790 bytes, size after decode=1843200 bytes, type=P, timestamp=1.720 seconds
+frame #45: size before decode=7989 bytes, size after decode=1843200 bytes, type=P, timestamp=1.760 seconds
+frame #46: size before decode=7826 bytes, size after decode=1843200 bytes, type=P, timestamp=1.800 seconds
+frame #47: size before decode=7649 bytes, size after decode=1843200 bytes, type=P, timestamp=1.840 seconds
+frame #48: size before decode=6977 bytes, size after decode=1843200 bytes, type=P, timestamp=1.880 seconds
+frame #49: size before decode=6978 bytes, size after decode=1843200 bytes, type=P, timestamp=1.920 seconds
+frame #50: size before decode=6173 bytes, size after decode=1843200 bytes, type=P, timestamp=1.960 seconds
+frame #51: size before decode=6451 bytes, size after decode=1843200 bytes, type=P, timestamp=2.000 seconds
+frame #52: size before decode=6107 bytes, size after decode=1843200 bytes, type=P, timestamp=2.040 seconds
+frame #53: size before decode=5965 bytes, size after decode=1843200 bytes, type=P, timestamp=2.080 seconds
+frame #54: size before decode=5819 bytes, size after decode=1843200 bytes, type=P, timestamp=2.120 seconds
+frame #55: size before decode=6114 bytes, size after decode=1843200 bytes, type=P, timestamp=2.160 seconds
+frame #56: size before decode=6064 bytes, size after decode=1843200 bytes, type=P, timestamp=2.200 seconds
+frame #57: size before decode=6639 bytes, size after decode=1843200 bytes, type=P, timestamp=2.240 seconds
+frame #58: size before decode=718 bytes, size after decode=1843200 bytes, type=P, timestamp=2.280 seconds
+frame #59: size before decode=4886 bytes, size after decode=1843200 bytes, type=P, timestamp=2.320 seconds
+frame #60: size before decode=5456 bytes, size after decode=1843200 bytes, type=P, timestamp=2.360 seconds
+frame #61: size before decode=5298 bytes, size after decode=1843200 bytes, type=P, timestamp=2.400 seconds
+frame #62: size before decode=5693 bytes, size after decode=1843200 bytes, type=P, timestamp=2.440 seconds
+frame #63: size before decode=5643 bytes, size after decode=1843200 bytes, type=P, timestamp=2.480 seconds
+frame #64: size before decode=5834 bytes, size after decode=1843200 bytes, type=P, timestamp=2.520 seconds
+frame #65: size before decode=5615 bytes, size after decode=1843200 bytes, type=P, timestamp=2.560 seconds
+frame #66: size before decode=5730 bytes, size after decode=1843200 bytes, type=P, timestamp=2.600 seconds
+frame #67: size before decode=5239 bytes, size after decode=1843200 bytes, type=P, timestamp=2.640 seconds
+frame #68: size before decode=6164 bytes, size after decode=1843200 bytes, type=P, timestamp=2.680 seconds
+frame #69: size before decode=6158 bytes, size after decode=1843200 bytes, type=P, timestamp=2.720 seconds
+frame #70: size before decode=6607 bytes, size after decode=1843200 bytes, type=P, timestamp=2.760 seconds
+frame #71: size before decode=6545 bytes, size after decode=1843200 bytes, type=P, timestamp=2.800 seconds
+frame #72: size before decode=6800 bytes, size after decode=1843200 bytes, type=P, timestamp=2.840 seconds
+frame #73: size before decode=6904 bytes, size after decode=1843200 bytes, type=P, timestamp=2.880 seconds
+frame #74: size before decode=7146 bytes, size after decode=1843200 bytes, type=P, timestamp=2.920 seconds
+frame #75: size before decode=7137 bytes, size after decode=1843200 bytes, type=P, timestamp=2.960 seconds
+frame #76: size before decode=7723 bytes, size after decode=1843200 bytes, type=P, timestamp=3.000 seconds
+frame #77: size before decode=7585 bytes, size after decode=1843200 bytes, type=P, timestamp=3.040 seconds
+frame #78: size before decode=8652 bytes, size after decode=1843200 bytes, type=P, timestamp=3.080 seconds
+frame #79: size before decode=6521 bytes, size after decode=1843200 bytes, type=P, timestamp=3.120 seconds
+frame #80: size before decode=8559 bytes, size after decode=1843200 bytes, type=P, timestamp=3.160 seconds
+frame #81: size before decode=8378 bytes, size after decode=1843200 bytes, type=P, timestamp=3.200 seconds
+frame #82: size before decode=5619 bytes, size after decode=1843200 bytes, type=P, timestamp=3.240 seconds
+frame #83: size before decode=1678 bytes, size after decode=1843200 bytes, type=P, timestamp=3.280 seconds
+frame #84: size before decode=6616 bytes, size after decode=1843200 bytes, type=P, timestamp=3.320 seconds
+frame #85: size before decode=7587 bytes, size after decode=1843200 bytes, type=P, timestamp=3.360 seconds
+frame #86: size before decode=3929 bytes, size after decode=1843200 bytes, type=P, timestamp=3.400 seconds
+frame #87: size before decode=5863 bytes, size after decode=1843200 bytes, type=P, timestamp=3.440 seconds
+frame #88: size before decode=5013 bytes, size after decode=1843200 bytes, type=P, timestamp=3.480 seconds
+frame #89: size before decode=7331 bytes, size after decode=1843200 bytes, type=P, timestamp=3.520 seconds
+frame #90: size before decode=2681 bytes, size after decode=1843200 bytes, type=P, timestamp=3.560 seconds
+frame #91: size before decode=3992 bytes, size after decode=1843200 bytes, type=P, timestamp=3.600 seconds
+frame #92: size before decode=2616 bytes, size after decode=1843200 bytes, type=P, timestamp=3.640 seconds
+frame #93: size before decode=2329 bytes, size after decode=1843200 bytes, type=P, timestamp=3.680 seconds
+frame #94: size before decode=2096 bytes, size after decode=1843200 bytes, type=P, timestamp=3.720 seconds
+frame #95: size before decode=2134 bytes, size after decode=1843200 bytes, type=P, timestamp=3.760 seconds
+frame #96: size before decode=1437 bytes, size after decode=1843200 bytes, type=P, timestamp=3.800 seconds
+frame #97: size before decode=1678 bytes, size after decode=1843200 bytes, type=P, timestamp=3.840 seconds
+frame #98: size before decode=3341 bytes, size after decode=1843200 bytes, type=P, timestamp=3.880 seconds
+frame #99: size before decode=2658 bytes, size after decode=1843200 bytes, type=P, timestamp=3.920 seconds
+frame #100: size before decode=2686 bytes, size after decode=1843200 bytes, type=P, timestamp=3.960 seconds
+frame #101: size before decode=2997 bytes, size after decode=1843200 bytes, type=P, timestamp=4.000 seconds
+frame #102: size before decode=3001 bytes, size after decode=1843200 bytes, type=P, timestamp=4.040 seconds
+frame #103: size before decode=2614 bytes, size after decode=1843200 bytes, type=P, timestamp=4.080 seconds
+frame #104: size before decode=3587 bytes, size after decode=1843200 bytes, type=P, timestamp=4.120 seconds
+frame #105: size before decode=4599 bytes, size after decode=1843200 bytes, type=P, timestamp=4.160 seconds
+frame #106: size before decode=5642 bytes, size after decode=1843200 bytes, type=P, timestamp=4.200 seconds
+frame #107: size before decode=6757 bytes, size after decode=1843200 bytes, type=P, timestamp=4.240 seconds
+frame #108: size before decode=784 bytes, size after decode=1843200 bytes, type=P, timestamp=4.280 seconds
+frame #109: size before decode=5285 bytes, size after decode=1843200 bytes, type=P, timestamp=4.320 seconds
+frame #110: size before decode=5117 bytes, size after decode=1843200 bytes, type=P, timestamp=4.360 seconds
+frame #111: size before decode=5553 bytes, size after decode=1843200 bytes, type=P, timestamp=4.400 seconds
+frame #112: size before decode=5601 bytes, size after decode=1843200 bytes, type=P, timestamp=4.440 seconds
+frame #113: size before decode=5281 bytes, size after decode=1843200 bytes, type=P, timestamp=4.480 seconds
+frame #114: size before decode=7270 bytes, size after decode=1843200 bytes, type=P, timestamp=4.520 seconds
+frame #115: size before decode=3146 bytes, size after decode=1843200 bytes, type=P, timestamp=4.560 seconds
+frame #116: size before decode=2708 bytes, size after decode=1843200 bytes, type=P, timestamp=4.600 seconds
+frame #117: size before decode=4652 bytes, size after decode=1843200 bytes, type=P, timestamp=4.640 seconds
+frame #118: size before decode=1918 bytes, size after decode=1843200 bytes, type=P, timestamp=4.680 seconds
+frame #119: size before decode=2144 bytes, size after decode=1843200 bytes, type=P, timestamp=4.720 seconds
+frame #120: size before decode=3733 bytes, size after decode=1843200 bytes, type=P, timestamp=4.760 seconds
+frame #121: size before decode=3473 bytes, size after decode=1843200 bytes, type=P, timestamp=4.800 seconds
+frame #122: size before decode=4653 bytes, size after decode=1843200 bytes, type=P, timestamp=4.840 seconds
+frame #123: size before decode=2332 bytes, size after decode=1843200 bytes, type=P, timestamp=4.880 seconds
+frame #124: size before decode=2593 bytes, size after decode=1843200 bytes, type=P, timestamp=4.920 seconds
+frame #125: size before decode=2488 bytes, size after decode=1843200 bytes, type=P, timestamp=4.960 seconds
+frame #126: size before decode=4304 bytes, size after decode=1843200 bytes, type=P, timestamp=5.000 seconds
+frame #127: size before decode=2883 bytes, size after decode=1843200 bytes, type=P, timestamp=5.040 seconds
+frame #128: size before decode=2186 bytes, size after decode=1843200 bytes, type=P, timestamp=5.080 seconds
+frame #129: size before decode=3380 bytes, size after decode=1843200 bytes, type=P, timestamp=5.120 seconds
+frame #130: size before decode=4411 bytes, size after decode=1843200 bytes, type=P, timestamp=5.160 seconds
+frame #131: size before decode=4714 bytes, size after decode=1843200 bytes, type=P, timestamp=5.200 seconds
+frame #132: size before decode=5496 bytes, size after decode=1843200 bytes, type=P, timestamp=5.240 seconds
+
+result summary:
+  totol frame count: 132
+  I frame count: 1 (0.76%)
+  P frame count:131 (99.24%)
+  B frame count: 0 (0.00%)
+  file size: 777.28 KB (Average: 6029.80 bytes/frame)
