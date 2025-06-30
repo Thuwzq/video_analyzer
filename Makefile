@@ -9,19 +9,18 @@ SRCDIR := src
 OBJDIR := obj
 BINDIR := target/bin
 
-# target files
-TARGET := $(BINDIR)/all_video_frame_size
-
 # get all source code
 SRCS := $(wildcard $(SRCDIR)/*.c)
 OBJS := $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(filter %.c,$(SRCS)))
 
+TARGETS = $(patsubst $(SRCDIR)/%.c, $(BINDIR)/%, $(SRCS))
+
 # default target
-all: $(TARGET)
+all: $(TARGETS)
 
 # connect .o files to target
-$(TARGET): $(OBJS) | $(BINDIR)
-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+$(BINDIR)/%: $(OBJDIR)/%.o | $(BINDIR)
+	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@
 
 # compile .c files to .o files
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
