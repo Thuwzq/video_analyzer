@@ -148,8 +148,8 @@ int parse_video_tag_info(FILE *file, VideoTagInfo *video_info) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        printf("usage: %s <flv file path>\n", argv[0]);
+    if (argc != 3) {
+        printf("usage: %s <flv file path> <output file path>\n", argv[0]);
         return 1;
     }
     
@@ -157,6 +157,17 @@ int main(int argc, char *argv[]) {
     if (!file) {
         printf("cannot open file: %s\n", argv[1]);
         return 1;
+    }
+
+    const char *output_filename = argv[2];
+    FILE *output_file = NULL;
+    if(output_filename) {
+        output_file = fopen(output_filename, "w");
+        if (!output_file) {
+            printf("cannot open output file: %s\n", output_filename);
+            fclose(file);
+            return 1;
+        }
     }
     
     // 解析FLV文件头
@@ -311,10 +322,12 @@ int main(int argc, char *argv[]) {
         printf("Warning: first frame timestamp not equal to first gop timestamp\n");
     }
 
+    // update first gop and last gop information
     gop_list[0].start_offset = 0;
     gop_list[0].gop_duration_time = first_frame_ending - first_frame_beginning;
     gop_list[1].timestamp = first_frame_ending;
     gop_list[gop_count - 1].gop_length = current_position - gop_list[gop_count - 1].start_offset;
+    // add one frame time to last gop duration
     gop_list[gop_count - 1].gop_duration_time = final_frame_beginning - gop_list[gop_count - 1].timestamp + first_frame_ending - first_frame_beginning;
     
     // output all GOP information
@@ -329,11 +342,26 @@ int main(int argc, char *argv[]) {
             gop_list[i].gop_length, 
             gop_list[i].timestamp, 
             gop_list[i].gop_duration_time);
+
+        if (output_file) {
+            fprintf(output_file, "%d,%ld,%ld,%d,%d\n",
+                gop_list[i].gop_num,
+                gop_list[i].start_offset,
+                gop_list[i].gop_length,
+                gop_list[i].timestamp,
+                gop_list[i].gop_duration_time);
+        }
     }
+
+
     
     // release memory
     free(gop_list);
     fclose(file);
+
+    if(output_file) {
+        fclose(output_file);
+    }
     
     return 0;
 }    
